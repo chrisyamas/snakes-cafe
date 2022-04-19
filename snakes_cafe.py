@@ -9,7 +9,6 @@ menu_intro = """
 **************************************
 """
 
-
 appetizers = ['Appetizers', 'Wings', 'Cookies', 'Spring Rolls']
 entrees = ['Entrees', 'Salmon', 'Steak', 'Meat Tornado', 'A Literal Garden']
 desserts = ['Desserts', 'Ice Cream', 'Cake', 'Pie']
@@ -27,9 +26,7 @@ def print_section(section):
     for item in section:
         if item == section[0]:
             print(item)
-            dashes = ''
-            for letter in item:
-                dashes += '-'
+            dashes = '-' * len(item)
             print(dashes)
         else:
             print(item)
@@ -37,7 +34,7 @@ def print_section(section):
 
 
 def take_order():
-    while True:
+    while True:  # false-y things equals: False, 0, '', 0.0, None
       
         new_item = input('> ').title()
 
@@ -47,15 +44,15 @@ def take_order():
             break
           
         elif new_item not in whole_menu:
-            print('** Sorry, but we don\'t make %s **' % new_item)
-        elif new_item not in total_order:
+            print(f"** Sorry, but we don't make {new_item} **")
+        elif new_item not in total_order:  # total_order = {} , defined above
             total_order[new_item] = 1
             print('** 1 order of %s has been added to your meal **' % new_item)
-        elif total_order[new_item] >= 1:
+        else:
             total_order[new_item] += 1
             print('** Another order of %s has been added **' % new_item)
             print('** That makes %s total **' % total_order[new_item])
-          
+
         print('** Would you like anything else? **')
         print('\n')
 
