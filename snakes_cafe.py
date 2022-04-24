@@ -12,6 +12,7 @@ menu_intro = """
 appetizers = ['Appetizers', 'Wings', 'Cookies', 'Spring Rolls']
 entrees = ['Entrees', 'Salmon', 'Steak', 'Meat Tornado', 'A Literal Garden']
 desserts = ['Desserts', 'Ice Cream', 'Cake', 'Pie']
+drinks = ['Drinks', 'Coffee', 'Tea', 'Unicorn Tears']
 whole_menu = appetizers + entrees + desserts
 total_order = {}
 
@@ -61,5 +62,7 @@ print(menu_intro)
 print_section(appetizers)
 print_section(entrees)
 print_section(desserts)
+print_section(drinks)
 print(order_intro)
 take_order()
+
